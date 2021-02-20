@@ -1,0 +1,69 @@
+
+<form [formGroup]="addCreditForm" (ngSubmit)="onSubmit()">
+  <!-- CREDIT CARD NUMBER -->
+  <section class="credit-card-num-field">
+    <label for="">Credit Card Number</label>
+    <input type="text" formControlName="creditCard" required />
+  </section>
+
+  <!-- CREDIT CARD HOLDER NAME -->
+  <section class="credit-card-holder">
+    <label for="">Card Holder Name</label>
+    <input type="text" formControlName="cardHolder" required />
+
+    <!-- IF ERROR -->
+    <div
+      *ngIf="
+        cardHolder &&
+        cardHolder.invalid &&
+        (cardHolder.dirty || cardHolder.touched)
+      "
+      class="alert"
+    >
+      <div *ngIf="cardHolder?.errors?.pattern">
+        Name should contain only text.
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPIRATION DATE -->
+  <section class="expiration-date">
+    <label for="">Expiration Date</label>
+    <input
+      type="date"
+      formControlName="expirationDate"
+      required
+      min="{{ minDate | date: 'yyyy-MM-dd' }}"
+    />
+  </section>
+
+  <!-- SECURITY CODE  -->
+  <section class="cvv">
+    <label for="">CVV</label>
+    <input type="string" formControlName="cvv" maxlength="3" />
+    <!-- IF ERROR -->
+
+    <div *ngIf="cvv && cvv.invalid && (cvv.dirty || cvv.touched)" class="alert">
+      <div *ngIf="cvv?.errors?.minlength">CVV should be of length 3</div>
+    </div>
+  </section>
+
+  <!-- AMOUNT-->
+  <section class="amount">
+    <label for="">Amount</label>
+    <input type="number" formControlName="amount" required />
+
+    <!-- IF ERROR -->
+    <div
+      *ngIf="amount && amount.invalid && (amount.dirty || amount.touched)"
+      class="alert"
+    >
+      <div *ngIf="amount?.errors?.min">Amount should be greater than 0.</div>
+    </div>
+  </section>
+
+  <button type="submit" [disabled]="!addCreditForm.valid">Submit</button>
+</form>
+
+
+<app-toast [message]="responseMessage"></app-toast>

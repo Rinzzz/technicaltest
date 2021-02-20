@@ -1,0 +1,23 @@
+:host {
+  height: 0px;
+  width: 0;
+}
+
+.toast-container {
+  height: 20vh;
+  width: 50vw;
+  box-shadow: 2px 2px 8px 8px #ccc;
+  background-color: white;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    margin: auto;
+    display: block;
+    text-align: center;
+    color: springgreen;
+  }
+}

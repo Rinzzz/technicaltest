@@ -1,0 +1,36 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 2% 5%;
+  width: fit-content;
+  height: fit-content;
+  box-shadow: 2px 2px 8px 8px #ccc;
+  margin: auto;
+  border-radius: 8px;
+  margin-bottom: 10%;
+}
+
+form {
+  width: 30vw;
+  section {
+    margin: 1em;
+    label {
+      display: block;
+      margin: 0.5em 0;
+      color: #607d8b;
+      font-weight: bold;
+    }
+    input {
+      height: 2em;
+      font-size: 1em;
+      width: 100%;
+      padding:0 0.5em;
+      border-radius: 8px;
+      border: 1px solid #616161;
+    }
+     .alert{
+      color: salmon;
+    }
+  }
+}
+
