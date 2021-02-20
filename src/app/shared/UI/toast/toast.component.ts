@@ -10,12 +10,12 @@ import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
       // ...
       state('open', style({
         zIndex: 9999,
-        transform: 'translateY(-50vh)',
+        transform: 'translateY(-90vh)',
         opacity: 1,
       })),
       state('closed', style({
         zIndex: 0,
-        transform: 'translateY(-100vh)',
+        transform: 'translateY(-150vh)',
         opacity: 0,
       })),
       transition('open <=> closed', [
