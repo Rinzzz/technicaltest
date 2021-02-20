@@ -8,7 +8,8 @@ What it does :
 3. Validates each field based on the technical test description
 4. Submits the form to a server and returns a success message, which is displayed in the toast message.
 
-Special Features
+Special Features : 
+
 1.Reusable component is used for displaying Toast message. It can be called from anywhere in the project
 2.Lazy Loading implemented with preloaded modules
 3.State management using NgRx
